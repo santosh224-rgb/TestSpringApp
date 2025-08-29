@@ -15,9 +15,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import org.springframework.core.io.Resource;
+import lombok.extern.slf4j.Slf4j;
 
 
-
+@Slf4j
 @RestController
 @RequestMapping("/user")
 @CrossOrigin(origins = "*")
@@ -93,5 +94,10 @@ public class UserController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + file.getOriginalFilename() + "\"")
                 .contentType(MediaType.parseMediaType(Objects.requireNonNull(file.getContentType())))
                 .body(resource);
+    }
+    @PostMapping("/feedback")
+    public ResponseEntity<String> feedback(@RequestBody String feedback){
+        log.info("Feedback is {} ",feedback);
+        return ResponseEntity.ok("Feedback is Submitted");
     }
 }
