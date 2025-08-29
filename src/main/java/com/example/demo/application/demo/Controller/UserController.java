@@ -94,30 +94,4 @@ public class UserController {
                 .contentType(MediaType.parseMediaType(Objects.requireNonNull(file.getContentType())))
                 .body(resource);
     }
-
-
-//    @PostMapping(value = "/upload", consumes = {"multipart/form-data"})
-//    public ResponseEntity<Video> upload(
-//            @Parameter(
-//                    description = "Video file to upload",
-//                    content = @Content(mediaType = "multipart/form-data",
-//                            schema = @Schema(type = "string", format = "binary"))
-//            )
-//            @RequestPart("file") MultipartFile file,
-//
-//            @Parameter(
-//                    description = "Metadata JSON for the video",
-//                    content = @Content(mediaType = "application/json",
-//                            schema = @Schema(implementation = UploadVideoRequest.class))
-//            )
-//            @RequestPart("payload") @Valid UploadVideoRequest payload
-//    ) throws Exception {
-//        return ResponseEntity.ok(service.upload(file, payload));
-//    }
-
-
-
-
-
-
 }
